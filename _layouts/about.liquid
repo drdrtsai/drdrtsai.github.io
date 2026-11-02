@@ -1,0 +1,71 @@
+---
+layout: default
+---
+<style>
+  .about-header { display: flex; gap: 1.75rem; align-items: flex-start; margin-bottom: 1.5rem; }
+  .about-header .about-id { flex: 1 1 auto; min-width: 0; }
+  .about-header .post-title { font-weight: bold; margin-top: 0; }
+  .about-header .desc { margin-bottom: 0.75rem; }
+  .about-header .about-links { margin-bottom: 0; }
+  .about-header .about-buttons { display: inline-flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .about-header .about-buttons a.btn { margin: 0; padding: 0 0.4rem; font-size: 0.75rem; line-height: 1.6; border: 1px solid var(--global-text-color); color: var(--global-text-color); border-radius: 2px; box-shadow: none; }
+  .about-header .about-buttons a.btn:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
+  .about-photo { flex: 0 0 auto; }
+  .about-photo img { display: block; height: 240px; max-height: 340px; width: auto; }
+  .about-header .desc a em { color: inherit; }
+  .about-header .email-img { height: 1.31em; width: auto; vertical-align: -0.3em; }
+  html[data-theme="dark"] .about-header .email-img { filter: invert(1); mix-blend-mode: screen; }
+  @media (max-width: 576px) {
+    .about-header { flex-direction: column-reverse; }
+    .about-photo img { height: auto !important; width: 45%; }
+  }
+</style>
+
+<div class="post">
+  <header class="post-header about-header">
+    <div class="about-id">
+      <h1 class="post-title">{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}</h1>
+      <p class="desc">{{ page.subtitle }}</p>
+      {% if page.links %}
+        <p class="about-links">{{ page.links | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      {% endif %}
+    </div>
+    {% if page.profile.image %}
+      <div class="about-photo">
+        <img
+          src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}"
+          alt="{{ site.first_name }} {{ site.last_name }}"
+          class="z-depth-1 rounded"
+        >
+      </div>
+    {% endif %}
+  </header>
+
+  <article>
+    <div class="clearfix">{{ content }}</div>
+  </article>
+</div>
+
+<script>
+  // Photo spans the affiliations block: top of the first line to bottom of the last (desktop only).
+  (function () {
+    var id = document.querySelector(".about-id");
+    var desc = document.querySelector(".about-id .desc");
+    var img = document.querySelector(".about-photo img");
+    if (!id || !desc || !img) return;
+    function fit() {
+      if (window.matchMedia("(max-width: 576px)").matches) {
+        img.style.height = "";
+        img.style.marginTop = "";
+        return;
+      }
+      var offset = desc.offsetTop - id.offsetTop;
+      img.style.marginTop = offset + "px";
+      img.style.height = desc.offsetHeight + "px";
+    }
+    window.addEventListener("resize", fit);
+    window.addEventListener("load", fit);
+    if (document.fonts) document.fonts.ready.then(fit);
+    fit();
+  })();
+</script>

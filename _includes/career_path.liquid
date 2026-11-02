@@ -1,0 +1,7 @@
+{%- assign stages = include.path | split: ' > ' -%}
+<span class="career-path">
+  {%- for stage in stages -%}
+    <span class="stage">{{ stage }}</span>
+    {%- unless forloop.last %}<span class="arrow">→</span>{% endunless -%}
+  {%- endfor -%}
+</span>

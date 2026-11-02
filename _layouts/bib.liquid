@@ -1,0 +1,89 @@
+---
+---
+<div class="row">
+  <div id="{{ entry.key }}" class="col-sm-12">
+    <div class="title">{{ entry.title }}</div>
+    <div class="author">
+      {%- for author in entry.author_array -%}
+        {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+        {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {%- capture author_html -%}
+          {{- author_last_html -}}
+          {%- if author.first != blank %} {{ author.first }}{% endif -%}
+        {%- endcapture -%}
+        {%- unless forloop.first %}, {% endunless -%}
+        {%- if site.scholar.last_name contains author_last_name and site.scholar.first_name contains author.first -%}
+          <strong>{{ author_html }}</strong>
+        {%- else -%}
+          {{ author_html }}
+        {%- endif -%}
+      {%- endfor -%}
+      {% if entry.annotation %}
+        <i
+          class="fa-solid fa-circle-info ml-1"
+          data-toggle="popover"
+          data-placement="top"
+          data-html="true"
+          data-content="{{ entry.annotation | escape }}"
+        >
+        </i>
+      {% endif %}
+    </div>
+
+    <div class="periodical">
+      <em>{{ entry.journal }}</em>. {{ entry.citation_detail }}.
+    </div>
+
+    <div class="pub-meta">
+    <div class="links">
+      {% if entry.doi %}
+        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
+      {% endif %}
+      {% if entry.pmid %}
+        <a href="https://pubmed.ncbi.nlm.nih.gov/{{ entry.pmid }}/" class="btn btn-sm z-depth-0" role="button">PMID: {{ entry.pmid }}</a>
+      {% endif %}
+      {% if entry.pmcid %}
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/{{ entry.pmcid }}/" class="btn btn-sm z-depth-0" role="button">PMCID: {{ entry.pmcid }}</a>
+      {% endif %}
+      {% if entry.pdf %}
+        <a href="{% if entry.pdf contains '://' %}{{ entry.pdf }}{% else %}{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}{% endif %}" class="btn btn-sm z-depth-0" role="button">PDF</a>
+      {% endif %}
+    </div>
+    {% if site.enable_publication_badges %}
+      <span class="badges">
+        {% if site.enable_publication_badges.dimensions and entry.dimensions and entry.dimensions != 'false' %}
+          <span
+            class="__dimensions_badge_embed__"
+            {% if entry.doi %}
+              data-doi="{{ entry.doi }}"
+            {% else %}
+              data-pmid="{{ entry.pmid }}"
+            {% endif %}
+            data-style="small_rectangle"
+            data-legend="hover-right"
+            style="margin-bottom: 3px;"
+          ></span>
+        {% endif %}
+        {% if site.enable_publication_badges.altmetric and entry.altmetric and entry.altmetric != 'false' %}
+          <span
+            class="altmetric-embed"
+            data-badge-type="2"
+            data-badge-popover="right"
+            {% if entry.doi %}
+              data-doi="{{ entry.doi }}"
+            {% else %}
+              data-pmid="{{ entry.pmid }}"
+            {% endif %}
+          ></span>
+        {% endif %}
+      </span>
+    {% endif %}
+    </div>
+    {% if entry.preprint %}
+      <div class="preprint">
+        Preprint version: {{ entry.preprint | replace: 'Tsai AC', '<strong>Tsai AC</strong>' }}.
+        {%- if entry.preprint_doi %} <a href="https://doi.org/{{ entry.preprint_doi }}">doi:{{ entry.preprint_doi }}</a>{% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
