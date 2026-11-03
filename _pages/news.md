@@ -19,6 +19,18 @@ nav_order: 5
 <ul class="news-list">
 
   <li>
+    <div class="news-title">Time-updated TMN stage and risk of clinician-documented suicidal ideation after cancer diagnosis: a hospital-based cohort study</div>
+    <div class="news-date">November 2, 2026</div>
+    <p>New publication in <em>Cancer Research and Treatment</em> led by Doo-Woong Lee</p>
+    <div class="links">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42971166/" class="btn btn-sm z-depth-0" role="button">Publication</a>
+    </div>
+  </li>
+
+
+
+
+  <li>
     <div class="news-title">Pathways, consequences, and community-proposed responses to school discontinuation in rural eastern Uganda: a qualitative study</div>
     <div class="news-date">October 21, 2026</div>
     <p>New publication in <em>Global Health Action</em> led by Jae Lee</p>
