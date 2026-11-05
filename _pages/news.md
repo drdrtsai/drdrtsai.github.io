@@ -19,6 +19,21 @@ nav_order: 5
 <ul class="news-list">
 
   <li>
+    <div class="news-title">An analysis of 20 years of retracted articles in psychiatry</div>
+    <div class="news-date">November 3, 2026</div>
+    <p>New publication in <em>BJPsych Bulletin</em> led by Aileen O'Brien</p>
+    <div class="links">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42972850/" class="btn btn-sm z-depth-0" role="button">Publication</a>
+    </div>
+    <p><a href="https://pubmed.ncbi.nlm.nih.gov/38356355/">Related reading</a>: "Protecting and promoting editorial independence" (Bhui et al. Br J Psychiatry. 2025;226:4-6)</p>
+    <p><a href="https://osf.io/preprints/psyarxiv/eau6r_v1">Preprint version</a>: "Editorial independence is dead, long live editorial independence: principles, compliance, and recommendations" (Bhui et al., PsyArXiv, February 15, 2024)</p>
+    <p><a href="https://www.bmj.com/company/medical-journals-refusal-to-retract-widely-criticised-paper-used-to-restrict-abortion-in-us-sparks-independence-row/">Even more reading</a>: "Journal’s refusal to retract paper used to restrict abortion in US sparks independence row" (Davies M. BMJ 2023;382:1576)</p>
+  </li>
+
+
+
+
+  <li>
     <div class="news-title">Time-updated TMN stage and risk of clinician-documented suicidal ideation after cancer diagnosis: a hospital-based cohort study</div>
     <div class="news-date">November 2, 2026</div>
     <p>New publication in <em>Cancer Research and Treatment</em> led by Doo-Woong Lee</p>
@@ -56,7 +71,7 @@ nav_order: 5
       <a href="https://www.npr.org/2026/09/30/nx-s1-5962843/hhs-study-gender-ideology-flaws-missing-context" class="btn btn-sm z-depth-0" role="button">News article</a>
       <a href="http://archive.today/6cGLE" class="btn btn-sm z-depth-0" role="button">Archived link</a>
     </div>
-    <p><a href="https://osf.io/preprints/socarxiv/fawcq_v1">Preprint</a>: "The alchemy linking 'gender ideology,' left-wing authoritarianism, and political violence: Comment on Fedida et al."</p>
+    <p><a href="https://osf.io/preprints/socarxiv/fawcq_v1">Preprint</a>: "The alchemy linking 'gender ideology,' left-wing authoritarianism, and political violence: Comment on Fedida et al." (Tsai, SocArXiv, August 29, 2026)</p>
   </li>
 
   <li>
