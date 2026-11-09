@@ -27,4 +27,4 @@ In sociology, ASR/AJS start losing the top 10 in the 1970s. By the time you get 
 
 The Top Fives' share of all citations to economics papers fell from 56% to 12%. Their share of papers fell even faster, so the average flagship paper became *more* cited relative to the field, rising from 4-6 fold to 8–9 fold. So this complicates a simple decoupling story.
 
-<img src="{{ '/assets/img/blog/fig_flagship_share.png' | relative_url }}" class="img-fluid" alt="Share of each decade's most-cited work that appeared in the six flagship journals">
+<img src="{{ '/assets/img/blog/fig_flagship_share.png' | relative_url }}" class="img-fluid" alt="Share of each decade's most-cited work that appeared in the 6 Top Fives">
