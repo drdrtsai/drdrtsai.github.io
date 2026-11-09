@@ -21,7 +21,7 @@ nav_order: 5
   <li>
     <div class="blog-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
     <div class="blog-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-    <p>{{ post.summary }}</p>
+    <p>{{ post.description }}</p>
   </li>
   {% endfor %}
 </ul>

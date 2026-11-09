@@ -2,7 +2,8 @@
 layout: post
 title: The Decoupling of Outlet from Impact in Economics
 date: 2026-11-08
-summary: I replicated Kieran Healy's analysis of flagship sociology papers and found a similar decoupling of outlet and impact in economics. A large part of the change seems to be a field growing around journals that stayed the same size (not just top papers being steered elsewhere).
+description: I replicated Kieran Healy's analysis of flagship sociology papers and found a similar decoupling of outlet and impact in economics. A large part of the change seems to be a field growing around journals that stayed the same size (not just top papers being steered elsewhere).
+og_image: /assets/img/blog/fig_flagship_share.png
 related_posts: false
 ---
 
